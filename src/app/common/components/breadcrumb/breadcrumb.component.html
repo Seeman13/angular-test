@@ -1,0 +1,15 @@
+<div class="content__breadcrumbs">
+  <mat-list role="list">
+    <a mat-list-item role="link" [routerLink]="'/'">
+      <mat-icon matListItemIcon>home</mat-icon>Главная
+    </a> /
+    <a mat-list-item role="link" *ngFor="let item of items; let i = index">
+      <span *ngIf="i+1 < items.length; else lastChild">
+        <a [routerLink]="item.url">{{ item.title }}</a> /
+      </span>
+      <ng-template #lastChild>
+        <span>{{ items[i].title }}</span>
+      </ng-template>
+    </a>
+  </mat-list>
+</div>

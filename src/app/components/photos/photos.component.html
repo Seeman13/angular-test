@@ -1,0 +1,29 @@
+<div class="content" *ngIf="photos; else loader">
+  <breadcrumb [items]="breadcrumbs"></breadcrumb>
+  <div class="content__card">
+    <mat-card class="card" *ngFor="let photo of photos">
+      <mat-card-header>
+        <div
+          mat-card-avatar
+          class="header-image"
+          [ngStyle]="{ 'background-image' : 'url(' + photo.thumbnailUrl + ')' }"
+        ></div>
+        <mat-card-title>Album ID: {{ photo.albumId }}</mat-card-title>
+        <mat-card-subtitle>ID: {{ photo.id }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="photo.url" [alt]="photo.title">
+      <mat-card-content>
+        <p>
+          {{ photo.title }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-raised-button color="primary" [routerLink]="['/photos/photo/', photo.id]">Просмотр</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <paginator [pageSizeOptions]="[limit]" (onGoPage)="goPage($event)"></paginator>
+</div>
+<ng-template #loader>
+  <mat-spinner></mat-spinner>
+</ng-template>

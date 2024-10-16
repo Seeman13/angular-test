@@ -1,0 +1,32 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@mixin md-icon-size($size: 24px) {
+  font-size: $size;
+  height: $size !important;
+  width: $size !important;
+}
+
+.md-icon-16 {
+  @include md-icon-size(16px);
+}
+
+.md-icon-18 {
+  @include md-icon-size(18px);
+}
+
+.md-icon-24 {
+  @include md-icon-size(24px);
+}
+
+.md-icon-36 {
+  @include md-icon-size(36px);
+}
+
+.md-icon-72 {
+  @include md-icon-size(72px);
+}
+
+.md-icon-max {
+  @include md-icon-size(101px);
+}

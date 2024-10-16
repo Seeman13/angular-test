@@ -1,0 +1,30 @@
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+  .content__card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap: 50px;
+  }
+    .card {
+      width: calc(50% - 50px);
+    }
+    .header-image {
+      background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+      background-size: cover;
+    }
+
+@media screen and (max-width: 767px) {
+  .content__card {
+    flex-flow: column nowrap;
+    gap: 25px;
+  }
+  .card {
+    width: 100%;
+  }
+}
